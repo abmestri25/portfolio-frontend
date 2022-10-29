@@ -16,9 +16,12 @@ const Experiences = () => {
   const onDelete = async (item) => {
     try {
       dispatch(ShowLoading());
-      const { data } = await axios.post("/api/portfolio/delete-experience", {
-        _id: item._id,
-      });
+      const { data } = await axios.post(
+        "https://portfolio-rwp7.onrender.com/api/portfolio/delete-experience",
+        {
+          _id: item._id,
+        }
+      );
 
       dispatch(HideLoading());
       if (data.success) {
@@ -39,12 +42,18 @@ const Experiences = () => {
       dispatch(ShowLoading());
       let res;
       if (selectedItemForEdit) {
-        res = await axios.post("/api/portfolio/update-experience", {
-          ...values,
-          _id: selectedItemForEdit._id,
-        });
+        res = await axios.post(
+          "https://portfolio-rwp7.onrender.com/api/portfolio/update-experience",
+          {
+            ...values,
+            _id: selectedItemForEdit._id,
+          }
+        );
       } else {
-        res = await axios.post("/api/portfolio/add-experience", values);
+        res = await axios.post(
+          "https://portfolio-rwp7.onrender.com/api/portfolio/add-experience",
+          values
+        );
       }
 
       dispatch(HideLoading());

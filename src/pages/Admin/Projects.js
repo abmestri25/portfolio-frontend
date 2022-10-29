@@ -16,9 +16,12 @@ const Projects = () => {
   const onDelete = async (item) => {
     try {
       dispatch(ShowLoading());
-      const { data } = await axios.post("/api/portfolio/delete-project", {
-        _id: item._id,
-      });
+      const { data } = await axios.post(
+        "https://portfolio-rwp7.onrender.com/api/portfolio/delete-project",
+        {
+          _id: item._id,
+        }
+      );
 
       dispatch(HideLoading());
       if (data.success) {
@@ -41,12 +44,18 @@ const Projects = () => {
       const tempTechStack = values?.techStack?.split(" , ") || [];
       values.techStack = tempTechStack;
       if (selectedItemForEdit) {
-        res = await axios.post("/api/portfolio/update-project", {
-          ...values,
-          _id: selectedItemForEdit._id,
-        });
+        res = await axios.post(
+          "https://portfolio-rwp7.onrender.com/api/portfolio/update-project",
+          {
+            ...values,
+            _id: selectedItemForEdit._id,
+          }
+        );
       } else {
-        res = await axios.post("/api/portfolio/add-project", values);
+        res = await axios.post(
+          "https://portfolio-rwp7.onrender.com/api/portfolio/add-project",
+          values
+        );
       }
 
       dispatch(HideLoading());

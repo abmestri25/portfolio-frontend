@@ -14,7 +14,10 @@ const Login = () => {
   const handleSubmit = async () => {
     try {
       dispatch(ShowLoading());
-      const { data } = await axios.post("/api/portfolio/admin-login", user);
+      const { data } = await axios.post(
+        "https://portfolio-rwp7.onrender.com/api/portfolio/admin-login",
+        user
+      );
       dispatch(HideLoading());
       console.log(data);
       if (data.success) {

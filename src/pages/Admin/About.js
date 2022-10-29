@@ -8,16 +8,19 @@ import { message } from "antd";
 const About = () => {
   const dispatch = useDispatch();
   const { portfolioData } = useSelector((state) => state.root);
-  
+
   const handleFinish = async (values) => {
     try {
       const tempSkills = values.skills.split(" , ");
       values.skills = tempSkills;
       dispatch(ShowLoading());
-      const { data } = await axios.post("/api/portfolio/update-about", {
-        ...values,
-        _id: portfolioData.about._id,
-      });
+      const { data } = await axios.post(
+        "https://portfolio-rwp7.onrender.comhttps://portfolio-rwp7.onrender.com/api/portfolio/update-about",
+        {
+          ...values,
+          _id: portfolioData.about._id,
+        }
+      );
       dispatch(HideLoading());
       if (data.success) {
         message.success(data.message);

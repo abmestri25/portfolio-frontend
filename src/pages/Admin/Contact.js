@@ -12,10 +12,13 @@ const Contact = () => {
   const onFinish = async (values) => {
     try {
       dispatch(ShowLoading());
-      const { data } = await axios.post("/api/portfolio/update-contact", {
-        ...values,
-        _id: portfolioData.contact._id,
-      });
+      const { data } = await axios.post(
+        "https://portfolio-rwp7.onrender.com/api/portfolio/update-contact",
+        {
+          ...values,
+          _id: portfolioData.contact._id,
+        }
+      );
       dispatch(HideLoading());
       if (data.success) {
         message.success(data.message);

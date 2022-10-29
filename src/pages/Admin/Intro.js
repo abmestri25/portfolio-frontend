@@ -12,10 +12,13 @@ const Intro = () => {
   const onFinish = async (values) => {
     try {
       dispatch(ShowLoading());
-      const { data } = await axios.post("/api/portfolio/update-intro", {
-        ...values,
-        _id: portfolioData.intro._id,
-      });
+      const { data } = await axios.post(
+        "https://portfolio-rwp7.onrender.com/api/portfolio/update-intro",
+        {
+          ...values,
+          _id: portfolioData.intro._id,
+        }
+      );
       dispatch(HideLoading());
       if (data.success) {
         message.success(data.message);

@@ -22,7 +22,9 @@ function App() {
   const getPortfolioData = async () => {
     try {
       dispatch(ShowLoading());
-      const { data } = await axios.get("/api/portfolio/get-portfolio-data");
+      const { data } = await axios.get(
+        "https://portfolio-rwp7.onrender.com/api/portfolio/get-portfolio-data"
+      );
       dispatch(SetPortfolioData(data));
       dispatch(ReloadData(false));
       dispatch(HideLoading());
@@ -35,14 +37,14 @@ function App() {
     if (!portfolioData) {
       getPortfolioData();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [portfolioData]);
 
   useEffect(() => {
     if (reloadData) {
       getPortfolioData();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reloadData]);
 
   return (
