@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f97316;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #54d6bb;
+}
+
+/* Animations */
+.abhishek {
+  animation: abhishek 1s infinite;
+}
+
+@keyframes abhishek {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.sanjay {
+  animation: sanjay 1s infinite;
+}
+
+@keyframes sanjay {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.mestri {
+  animation: mestri 1s infinite;
+}
+
+@keyframes mestri {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+input,
+textarea {
+  height: 50px;
+  width: 100%;
+  border: 1px solid #54d6bb;
+  padding: 10px;
+}
+
+textarea {
+  height: 70px;
+}
+
+textarea,
+input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #54d6bb;
+}
