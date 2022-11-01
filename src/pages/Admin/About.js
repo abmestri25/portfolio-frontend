@@ -15,7 +15,7 @@ const About = () => {
       values.skills = tempSkills;
       dispatch(ShowLoading());
       const { data } = await axios.post(
-        "https://portfolio-rwp7.onrender.comhttps://abmestri-api.onrender.com/api/portfolio/update-about",
+        "https://abmestri-api.onrender.com/api/portfolio/update-about",
         {
           ...values,
           _id: portfolioData.about._id,
