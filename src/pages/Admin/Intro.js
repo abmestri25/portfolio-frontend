@@ -13,7 +13,7 @@ const Intro = () => {
     try {
       dispatch(ShowLoading());
       const { data } = await axios.post(
-        "https://portfolio-rwp7.onrender.com/api/portfolio/update-intro",
+        "https://abmestri-api.onrender.com/api/portfolio/update-intro",
         {
           ...values,
           _id: portfolioData.intro._id,

@@ -17,7 +17,7 @@ const Projects = () => {
     try {
       dispatch(ShowLoading());
       const { data } = await axios.post(
-        "https://portfolio-rwp7.onrender.com/api/portfolio/delete-project",
+        "https://abmestri-api.onrender.com/api/portfolio/delete-project",
         {
           _id: item._id,
         }
@@ -45,7 +45,7 @@ const Projects = () => {
       values.techStack = tempTechStack;
       if (selectedItemForEdit) {
         res = await axios.post(
-          "https://portfolio-rwp7.onrender.com/api/portfolio/update-project",
+          "https://abmestri-api.onrender.com/api/portfolio/update-project",
           {
             ...values,
             _id: selectedItemForEdit._id,
@@ -53,7 +53,7 @@ const Projects = () => {
         );
       } else {
         res = await axios.post(
-          "https://portfolio-rwp7.onrender.com/api/portfolio/add-project",
+          "https://abmestri-api.onrender.com/api/portfolio/add-project",
           values
         );
       }

@@ -23,7 +23,7 @@ function App() {
     try {
       dispatch(ShowLoading());
       const { data } = await axios.get(
-        "https://portfolio-rwp7.onrender.com/api/portfolio/get-portfolio-data"
+        "https://abmestri-api.onrender.com/api/portfolio/get-portfolio-data"
       );
       dispatch(SetPortfolioData(data));
       dispatch(ReloadData(false));

@@ -17,7 +17,7 @@ const Experiences = () => {
     try {
       dispatch(ShowLoading());
       const { data } = await axios.post(
-        "https://portfolio-rwp7.onrender.com/api/portfolio/delete-experience",
+        "https://abmestri-api.onrender.com/api/portfolio/delete-experience",
         {
           _id: item._id,
         }
@@ -43,7 +43,7 @@ const Experiences = () => {
       let res;
       if (selectedItemForEdit) {
         res = await axios.post(
-          "https://portfolio-rwp7.onrender.com/api/portfolio/update-experience",
+          "https://abmestri-api.onrender.com/api/portfolio/update-experience",
           {
             ...values,
             _id: selectedItemForEdit._id,
@@ -51,7 +51,7 @@ const Experiences = () => {
         );
       } else {
         res = await axios.post(
-          "https://portfolio-rwp7.onrender.com/api/portfolio/add-experience",
+          "https://abmestri-api.onrender.com/api/portfolio/add-experience",
           values
         );
       }
