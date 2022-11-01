@@ -27,9 +27,14 @@ const Intro = () => {
         </h1>
         <h1 className=" text-white text-2xl md:text-5xl">{caption}</h1>
         <p className="text-tertiary text-md md:text-xl ">{description}</p>
-        <button className=" border-2 border-tertiary p-2 text-white w-1/2  md:text-xl md:p-4 lg:w-1/3 ">
-          My Resume
-        </button>
+        <a
+          href="/resume/Abhishek Sanjay Mestri - Software Developer.pdf"
+          download
+        >
+          <button className=" border-2 border-tertiary p-2 text-white w-1/2  md:text-xl md:p-4 lg:w-1/3 ">
+            My Resume
+          </button>
+        </a>
       </div>
 
       <img className=" w-1/2 md:w-2/4 lg:w-1/3" src={image} alt="" />
